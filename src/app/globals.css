@@ -1,26 +1,80 @@
 @import "tailwindcss";
+@import "react-day-picker/style.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7fbfd;
+  --foreground: #0b2a3d;
+  --marine: #0b3d5c;
+  --marine-dark: #082f46;
+  --ocean: #1e6b8c;
+  --sky: #b8e0f0;
+  --sky-light: #e8f6fb;
+  --sand: #f4f8fa;
+  --white: #ffffff;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-marine: var(--marine);
+  --color-marine-dark: var(--marine-dark);
+  --color-ocean: var(--ocean);
+  --color-sky: var(--sky);
+  --color-sky-light: var(--sky-light);
+  --color-sand: var(--sand);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.rdp-root {
+  --rdp-accent-color: #0b3d5c;
+  --rdp-accent-background-color: #e8f6fb;
+  --rdp-day_button-border-radius: 9999px;
+}
+
+.quote-calendar .rdp-root {
+  --rdp-day-height: 2.65rem;
+  --rdp-day-width: 2.65rem;
+  --rdp-day_button-height: 2.65rem;
+  --rdp-day_button-width: 2.65rem;
+  --rdp-nav_button-height: 2rem;
+  --rdp-nav_button-width: 2rem;
+  --rdp-months-gap: 0;
+  --rdp-weekday-padding: 0.35rem 0;
+  margin: 0;
+  padding: 0;
+  font-size: 0.95rem;
+}
+
+.quote-calendar .rdp-month {
+  width: auto;
+}
+
+.quote-calendar .rdp-month_caption {
+  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.quote-calendar .rdp-weekday {
+  font-size: 0.75rem;
+  opacity: 0.75;
+}
+
+.quote-calendar .rdp-day {
+  padding: 0.1rem;
 }

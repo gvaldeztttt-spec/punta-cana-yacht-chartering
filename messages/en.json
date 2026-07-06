@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "title": "Punta Cana Yacht Charting | Private Yacht & Catamaran Charters",
+    "description": "Private yacht, catamaran, and sailboat charters departing from Casa de Campo Marina to Palmilla, Saona Island, and Catalina Island."
+  },
+  "nav": {
+    "fleet": "Our Fleet",
+    "yachts": "Yachts",
+    "catamarans": "Catamarans",
+    "sailboats": "Sailboats",
+    "destinations": "Destinations",
+    "contact": "Contact",
+    "getQuote": "Get a Quote"
+  },
+  "hero": {
+    "badge": "#1 Private Charters from Casa de Campo",
+    "title": "Punta Cana Yacht & Boat Charters",
+    "subtitle": "Private yachts, catamarans, and sailboats departing daily from Casa de Campo Marina to Palmilla, Saona Island, and Catalina Island.",
+    "cta": "View The Fleet",
+    "stats": {
+      "boats": "16+ Private Vessels",
+      "marina": "Casa de Campo Marina",
+      "destinations": "3 Island Destinations"
+    }
+  },
+  "steps": {
+    "title": "How It Works",
+    "step1": "Choose a Boat",
+    "step2": "Select Your Date & Details",
+    "step3": "Receive Your Quote by Email"
+  },
+  "fleet": {
+    "popularYachts": {
+      "title": "Most Popular Yacht Rentals",
+      "subtitle": "Explore Punta Cana's coastline aboard our modern private yachts, perfect for groups seeking comfort, speed, and luxury on the water."
+    },
+    "catamarans": {
+      "title": "Private Catamaran Charters",
+      "subtitle": "Spacious catamarans ideal for larger groups, parties, and relaxed island-hopping adventures with plenty of deck space."
+    },
+    "sailboats": {
+      "title": "Private Sailboat Charters",
+      "subtitle": "Enjoy a peaceful sailing experience with professional crew aboard our sailboat charters from Casa de Campo Marina."
+    },
+    "viewAll": "View All {category}",
+    "pageTitle": "Our Fleet",
+    "pageSubtitle": "Browse our full collection of private yachts, catamarans, and sailboats departing from Casa de Campo Marina.",
+    "filterAll": "All",
+    "filterYachts": "Yachts",
+    "filterCatamarans": "Catamarans",
+    "filterSailboats": "Sailboats",
+    "noResults": "No vessels found in this category."
+  },
+  "boatCard": {
+    "from": "From",
+    "startingPrice": "From ${price}",
+    "guests": "Up to {count} guests",
+    "getQuote": "Get Instant Quote",
+    "details": "Details",
+    "location": "Casa de Campo Marina"
+  },
+  "destinations": {
+    "title": "Top Destinations from Casa de Campo",
+    "subtitle": "Discover the most beautiful destinations accessible by private charter from Casa de Campo Marina.",
+    "palmilla": {
+      "name": "Palmilla Beach",
+      "tag": "Natural Pool",
+      "description": "Crystal-clear water, shallow sandbars, and one of the Dominican Republic's most beautiful anchorages."
+    },
+    "saona": {
+      "name": "Saona Island",
+      "tag": "Full Day Experience",
+      "description": "White-sand beaches, turquoise lagoons, and the iconic natural pools of the Caribbean."
+    },
+    "catalina": {
+      "name": "Catalina Island",
+      "tag": "Snorkeling",
+      "description": "Incredible snorkeling, coral reefs, and vibrant marine life in pristine Caribbean waters."
+    }
+  },
+  "trust": {
+    "title": "Why Book With Punta Cana Yacht Charting",
+    "subtitle": "Every charter is private, crewed, and tailored to your group departing from Casa de Campo Marina.",
+    "items": {
+      "private": {
+        "title": "Private Experience",
+        "description": "Total privacy for your group with flexible timing and personalized routes."
+      },
+      "crew": {
+        "title": "Licensed Crew",
+        "description": "Professional captain and crew on every charter for a safe, worry-free day on the water."
+      },
+      "booking": {
+        "title": "Simple Booking",
+        "description": "Choose your boat, pick a date, and receive an instant quote by email."
+      },
+      "destinations": {
+        "title": "Signature Routes",
+        "description": "Curated itineraries to Palmilla, Saona Island, and Catalina Island."
+      }
+    }
+  },
+  "contact": {
+    "title": "Ready to Charter?",
+    "subtitle": "Browse our fleet, select your preferred date, and receive an instant quote by email.",
+    "cta": "Browse the Fleet",
+    "emailLabel": "Email",
+    "locationLabel": "Location",
+    "location": "Casa de Campo Marina, La Romana, Dominican Republic"
+  },
+  "boatDetail": {
+    "specs": "Specifications",
+    "length": "Length",
+    "capacity": "Capacity",
+    "departure": "Departure",
+    "category": "Category",
+    "pricing": "Pricing",
+    "halfDay": "Half Day",
+    "fullDay": "Full Day",
+    "halfDaySchedule": "9:00 AM – 1:00 PM or 1:30 PM – 5:30 PM",
+    "fullDaySchedule": "9:00 AM – 5:00 PM",
+    "charterTimes": "Charter times",
+    "notAvailable": "Not available",
+    "includes": "Included",
+    "destinations": "Available Destinations",
+    "gallery": "Photo Gallery",
+    "viewAllPhotos": "View all {count} photos",
+    "showLessPhotos": "Show fewer photos",
+    "backToFleet": "Back to Fleet",
+    "quoteSection": "Request Your Quote",
+    "categories": {
+      "yacht": "Yacht",
+      "catamaran": "Catamaran",
+      "sailboat": "Sailboat"
+    }
+  },
+  "footer": {
+    "tagline": "Private yacht and catamaran charters from Casa de Campo Marina.",
+    "rights": "© {year} Punta Cana Yacht Charting. All rights reserved.",
+    "fleet": "Fleet",
+    "contact": "Contact",
+    "legal": "Legal",
+    "terms": "Terms & Conditions"
+  },
+  "faq": {
+    "title": "FAQ",
+    "termsLink": "terms and conditions",
+    "items": {
+      "foodDrinks": {
+        "question": "Do you offer any additional food or drinks?",
+        "answer": "Yes, we offer a catering menu and drinks that can be prepared per request and quoted as requested."
+      },
+      "transportation": {
+        "question": "Do you offer transportation to the departure site?",
+        "answer": "Yes, we offer transportation services at an additional cost. We also recommend checking with your hotel to compare for the ideal option.",
+        "rates": "For clients staying in Punta Cana and booking a boat in Casa de Campo, the round-trip transport service rate is $250 up to 14 passengers, $375 up to 35 passengers."
+      },
+      "casaDeCampoMarina": {
+        "question": "What is the Casa de Campo Marina?",
+        "answer": "Casa de Campo Marina is an exclusive gated community located within the renowned Casa de Campo Resort in La Romana, Dominican Republic. To access the marina, all visitors must pass through the resort's main security checkpoint, where identification and the purpose of the visit will be verified. To facilitate entry, a clear photo of your passport is required in advance so that visitor access can be registered with resort security."
+      },
+      "cancellation": {
+        "question": "What is the cancellation / payment policy?",
+        "answerBeforeLink": "Please check our ",
+        "answerAfterLink": " page. Cancellation and prepayment policies vary according to your selection."
+      },
+      "pets": {
+        "question": "Are pets allowed on board?",
+        "answer": "Yes, you can bring your pets on your trip!"
+      },
+      "paymentMethods": {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept the following payment methods. Details will be sent once the quote is finalized."
+      }
+    }
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "metaDescription": "Cancellation policies, payment terms, and charter conditions for Punta Cana Yacht Charting.",
+    "cancellationTitle": "Cancellation Policies",
+    "policies": {
+      "threeDays": "If the cancellation is 3 or more days before the contracted date, the Company will refund 100% of the payment.",
+      "oneToTwoDays": "If the cancellation happens 1 to 2 days before the contracted date, the Company will refund 50% of the payment.",
+      "sameDay": "If the cancellation is the same day as the contracted date, the client must pay in full.",
+      "naturalPhenomena": "If the cancellation is due to a severe natural phenomena excluding rain or because of the prohibition of the Dominican Navy, the Company will return the 100% deposit.",
+      "holiday": "If the cancellation is during a holiday, the client will be charged 100% of the deposit. From Dec 24 to Jan 7 and Holy Week are all holidays.",
+      "rescheduling": "Rescheduling can be coordinated in the event of severe rain where deemed unable to charter by the navy."
+    }
+  },
+  "common": {
+    "learnMore": "Learn More"
+  },
+  "quoteForm": {
+    "title": "Get Your Instant Quote",
+    "subtitle": "Select your preferred date and details. We'll email your quote automatically.",
+    "name": "Full name",
+    "email": "Email address",
+    "phone": "Phone number",
+    "phoneCountry": "Country",
+    "phoneCountryPlaceholder": "Select your country code",
+    "phonePlaceholder": "Phone number",
+    "phoneHint": "Select your country code, then enter your number without the + sign.",
+    "preferredDate": "Preferred charter date",
+    "selectedDate": "Selected date",
+    "duration": "Charter duration",
+    "halfDay": "Half day",
+    "fullDay": "Full day",
+    "halfDaySchedule": "9:00 AM – 1:00 PM or 1:30 PM – 5:30 PM",
+    "fullDaySchedule": "9:00 AM – 5:00 PM",
+    "guests": "Number of guests",
+    "destination": "Preferred destination",
+    "destinationOptional": "Select a destination (optional)",
+    "destinations": {
+      "palmilla": "Palmilla Beach",
+      "saona": "Saona Island",
+      "catalina": "Catalina Island"
+    },
+    "message": "Additional notes",
+    "messagePlaceholder": "Tell us about your celebration, timing preferences, or special requests.",
+    "instantQuote": "Instant quote",
+    "estimatedPrice": "Estimated price",
+    "submit": "Email My Quote",
+    "sending": "Sending quote...",
+    "successTitle": "Quote sent!",
+    "successMessage": "Check your inbox for your instant quote. Our team will follow up by email to confirm availability.",
+    "error": "Unable to send your quote. Please try again."
+  }
+}

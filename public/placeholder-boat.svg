@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-label="Boat placeholder">
+  <defs>
+    <linearGradient id="sea" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b8e0f0" />
+      <stop offset="100%" stop-color="#1e6b8c" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#sea)" />
+  <path d="M120 380h560l-40 80H160z" fill="#0b3d5c" opacity="0.85" />
+  <path d="M220 380l80-120 120 40 80-60 60 140z" fill="#ffffff" opacity="0.9" />
+  <circle cx="620" cy="160" r="48" fill="#ffffff" opacity="0.35" />
+</svg>

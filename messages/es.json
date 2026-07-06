@@ -1,0 +1,228 @@
+{
+  "metadata": {
+    "title": "Punta Cana Yacht Charting | Alquiler de Yates y Catamaranes Privados",
+    "description": "Alquiler privado de yates, catamaranes y veleros desde Marina Casa de Campo hacia Palmilla, Isla Saona e Isla Catalina."
+  },
+  "nav": {
+    "fleet": "Nuestra Flota",
+    "yachts": "Yates",
+    "catamarans": "Catamaranes",
+    "sailboats": "Veleros",
+    "destinations": "Destinos",
+    "contact": "Contacto",
+    "getQuote": "Cotizar"
+  },
+  "hero": {
+    "badge": "#1 Charter Privado desde Casa de Campo",
+    "title": "Alquiler de Yates y Barcos en Punta Cana",
+    "subtitle": "Yates, catamaranes y veleros privados con salida diaria desde Marina Casa de Campo hacia Palmilla, Isla Saona e Isla Catalina.",
+    "cta": "Ver la Flota",
+    "stats": {
+      "boats": "16+ Embarcaciones Privadas",
+      "marina": "Marina Casa de Campo",
+      "destinations": "3 Destinos Insulares"
+    }
+  },
+  "steps": {
+    "title": "Cómo Funciona",
+    "step1": "Elige un Barco",
+    "step2": "Selecciona Fecha y Detalles",
+    "step3": "Recibe tu Cotización por Email"
+  },
+  "fleet": {
+    "popularYachts": {
+      "title": "Yates Más Populares",
+      "subtitle": "Explora la costa de Punta Cana a bordo de nuestros yates privados modernos, perfectos para grupos que buscan comodidad, velocidad y lujo."
+    },
+    "catamarans": {
+      "title": "Catamaranes Privados",
+      "subtitle": "Catamaranes espaciosos ideales para grupos grandes, fiestas y aventuras relajadas entre islas con amplio espacio en cubierta."
+    },
+    "sailboats": {
+      "title": "Veleros Privados",
+      "subtitle": "Disfruta de una experiencia de navegación tranquila con tripulación profesional desde Marina Casa de Campo."
+    },
+    "viewAll": "Ver Todos los {category}",
+    "pageTitle": "Nuestra Flota",
+    "pageSubtitle": "Explora nuestra colección completa de yates, catamaranes y veleros privados con salida desde Marina Casa de Campo.",
+    "filterAll": "Todos",
+    "filterYachts": "Yates",
+    "filterCatamarans": "Catamaranes",
+    "filterSailboats": "Veleros",
+    "noResults": "No se encontraron embarcaciones en esta categoría."
+  },
+  "boatCard": {
+    "from": "Desde",
+    "startingPrice": "Desde ${price}",
+    "guests": "Hasta {count} personas",
+    "getQuote": "Cotización Instantánea",
+    "details": "Detalles",
+    "location": "Marina Casa de Campo"
+  },
+  "destinations": {
+    "title": "Principales Destinos desde Casa de Campo",
+    "subtitle": "Descubre los destinos más hermosos accesibles en charter privado desde Marina Casa de Campo.",
+    "palmilla": {
+      "name": "Playa Palmilla",
+      "tag": "Piscina Natural",
+      "description": "Aguas cristalinas, bancos de arena poco profundos y uno de los fondeaderos más bellos de República Dominicana."
+    },
+    "saona": {
+      "name": "Isla Saona",
+      "tag": "Experiencia de Día Completo",
+      "description": "Playas de arena blanca, lagunas turquesas y las icónicas piscinas naturales del Caribe."
+    },
+    "catalina": {
+      "name": "Isla Catalina",
+      "tag": "Snorkel",
+      "description": "Snorkel increíble, arrecifes de coral y vida marina vibrante en aguas caribeñas prístinas."
+    }
+  },
+  "trust": {
+    "title": "Por Qué Reservar con Punta Cana Yacht Charting",
+    "subtitle": "Cada charter es privado, con tripulación y adaptado a tu grupo, con salida desde Marina Casa de Campo.",
+    "items": {
+      "private": {
+        "title": "Experiencia Privada",
+        "description": "Total privacidad para tu grupo con horarios flexibles y rutas personalizadas."
+      },
+      "crew": {
+        "title": "Tripulación Licenciada",
+        "description": "Capitán y tripulación profesional en cada charter para un día seguro y sin preocupaciones."
+      },
+      "booking": {
+        "title": "Reserva Sencilla",
+        "description": "Elige tu barco, selecciona una fecha y recibe una cotización instantánea por correo."
+      },
+      "destinations": {
+        "title": "Rutas Destacadas",
+        "description": "Itinerarios seleccionados hacia Palmilla, Isla Saona e Isla Catalina."
+      }
+    }
+  },
+  "contact": {
+    "title": "¿Listo para tu Charter?",
+    "subtitle": "Explora nuestra flota, selecciona tu fecha preferida y recibe una cotización instantánea por correo.",
+    "cta": "Ver la Flota",
+    "emailLabel": "Correo",
+    "locationLabel": "Ubicación",
+    "location": "Marina Casa de Campo, La Romana, República Dominicana"
+  },
+  "boatDetail": {
+    "specs": "Especificaciones",
+    "length": "Eslora",
+    "capacity": "Capacidad",
+    "departure": "Salida",
+    "category": "Categoría",
+    "pricing": "Precios",
+    "halfDay": "Medio Día",
+    "fullDay": "Día Completo",
+    "halfDaySchedule": "9:00 AM – 1:00 PM o 1:30 PM – 5:30 PM",
+    "fullDaySchedule": "9:00 AM – 5:00 PM",
+    "charterTimes": "Horario del charter",
+    "notAvailable": "No disponible",
+    "includes": "Incluye",
+    "destinations": "Destinos Disponibles",
+    "gallery": "Galería de Fotos",
+    "viewAllPhotos": "Ver las {count} fotos",
+    "showLessPhotos": "Ver menos fotos",
+    "backToFleet": "Volver a la Flota",
+    "quoteSection": "Solicita tu Cotización",
+    "categories": {
+      "yacht": "Yate",
+      "catamaran": "Catamarán",
+      "sailboat": "Velero"
+    }
+  },
+  "footer": {
+    "tagline": "Charter privado de yates y catamaranes desde Marina Casa de Campo.",
+    "rights": "© {year} Punta Cana Yacht Charting. Todos los derechos reservados.",
+    "fleet": "Flota",
+    "contact": "Contacto",
+    "legal": "Legal",
+    "terms": "Términos y Condiciones"
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "termsLink": "términos y condiciones",
+    "items": {
+      "foodDrinks": {
+        "question": "¿Ofrecen comida o bebidas adicionales?",
+        "answer": "Sí, ofrecemos un menú de catering y bebidas que pueden prepararse bajo solicitud y cotizarse según lo requerido."
+      },
+      "transportation": {
+        "question": "¿Ofrecen transporte al punto de salida?",
+        "answer": "Sí, ofrecemos servicios de transporte con un costo adicional. También recomendamos consultar con su hotel para comparar la opción ideal.",
+        "rates": "Para clientes que se hospedan en Punta Cana y reservan un barco en Casa de Campo, la tarifa del servicio de transporte ida y vuelta es de $250 hasta 14 pasajeros y $375 hasta 35 pasajeros."
+      },
+      "casaDeCampoMarina": {
+        "question": "¿Qué es Marina Casa de Campo?",
+        "answer": "Marina Casa de Campo es una comunidad exclusiva con acceso controlado ubicada dentro del reconocido resort Casa de Campo en La Romana, República Dominicana. Para acceder a la marina, todos los visitantes deben pasar por el punto de seguridad principal del resort, donde se verificará la identificación y el propósito de la visita. Para facilitar el ingreso, se requiere una foto clara de su pasaporte con anticipación para registrar el acceso de visitantes con la seguridad del resort."
+      },
+      "cancellation": {
+        "question": "¿Cuál es la política de cancelación y pago?",
+        "answerBeforeLink": "Consulte nuestra página de ",
+        "answerAfterLink": ". Las políticas de cancelación y prepago varían según su selección."
+      },
+      "pets": {
+        "question": "¿Se permiten mascotas a bordo?",
+        "answer": "¡Sí, puede traer sus mascotas en su viaje!"
+      },
+      "paymentMethods": {
+        "question": "¿Qué métodos de pago aceptan?",
+        "answer": "Aceptamos los siguientes métodos de pago. Los detalles se enviarán una vez que la cotización esté finalizada."
+      }
+    }
+  },
+  "terms": {
+    "title": "Términos y Condiciones",
+    "metaDescription": "Políticas de cancelación, términos de pago y condiciones de charter para Punta Cana Yacht Charting.",
+    "cancellationTitle": "Políticas de Cancelación",
+    "policies": {
+      "threeDays": "Si la cancelación es 3 o más días antes de la fecha contratada, la Compañía reembolsará el 100% del pago.",
+      "oneToTwoDays": "Si la cancelación ocurre de 1 a 2 días antes de la fecha contratada, la Compañía reembolsará el 50% del pago.",
+      "sameDay": "Si la cancelación es el mismo día de la fecha contratada, el cliente debe pagar el monto completo.",
+      "naturalPhenomena": "Si la cancelación se debe a un fenómeno natural severo excluyendo lluvia o por prohibición de la Marina de Guerra Dominicana, la Compañía devolverá el 100% del depósito.",
+      "holiday": "Si la cancelación ocurre durante un feriado, al cliente se le cobrará el 100% del depósito. Del 24 de diciembre al 7 de enero y la Semana Santa son feriados.",
+      "rescheduling": "Se puede coordinar un cambio de fecha en caso de lluvia severa cuando la marina considere que no es posible realizar el charter."
+    }
+  },
+  "common": {
+    "learnMore": "Más Información"
+  },
+  "quoteForm": {
+    "title": "Obtén tu Cotización Instantánea",
+    "subtitle": "Selecciona tu fecha preferida y detalles. Te enviaremos la cotización automáticamente por correo.",
+    "name": "Nombre completo",
+    "email": "Correo electrónico",
+    "phone": "Número de teléfono",
+    "phoneCountry": "País",
+    "phoneCountryPlaceholder": "Selecciona tu código de país",
+    "phonePlaceholder": "Número de teléfono",
+    "phoneHint": "Selecciona tu código de país e ingresa tu número sin el signo +.",
+    "preferredDate": "Fecha preferida del charter",
+    "selectedDate": "Fecha seleccionada",
+    "duration": "Duración del charter",
+    "halfDay": "Medio día",
+    "fullDay": "Día completo",
+    "halfDaySchedule": "9:00 AM – 1:00 PM o 1:30 PM – 5:30 PM",
+    "fullDaySchedule": "9:00 AM – 5:00 PM",
+    "guests": "Número de personas",
+    "destination": "Destino preferido",
+    "destinationOptional": "Selecciona un destino (opcional)",
+    "destinations": {
+      "palmilla": "Playa Palmilla",
+      "saona": "Isla Saona",
+      "catalina": "Isla Catalina"
+    },
+    "message": "Notas adicionales",
+    "messagePlaceholder": "Cuéntanos sobre tu celebración, horario preferido o solicitudes especiales.",
+    "instantQuote": "Cotización instantánea",
+    "estimatedPrice": "Precio estimado",
+    "submit": "Enviar Cotización por Email",
+    "sending": "Enviando cotización...",
+    "successTitle": "¡Cotización enviada!",
+    "successMessage": "Revisa tu bandeja de entrada para ver tu cotización instantánea. Nuestro equipo confirmará disponibilidad por correo.",
+    "error": "No se pudo enviar tu cotización. Inténtalo de nuevo."
+  }
+}
