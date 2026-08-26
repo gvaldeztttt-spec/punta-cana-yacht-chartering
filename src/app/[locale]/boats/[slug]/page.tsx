@@ -43,6 +43,17 @@ export default async function BoatDetailPage({ params }: Props) {
   const images = getBoatImages(slug);
   const inclusions = getCharterInclusions(locale);
 
+  const vesselSpecRows = [
+    boat.model ? { label: t("model"), value: boat.model } : null,
+    boat.year ? { label: t("year"), value: boat.year } : null,
+    { label: t("length"), value: boat.length },
+    { label: t("capacity"), value: String(boat.passengers) },
+    boat.engines ? { label: t("engines"), value: boat.engines } : null,
+    boat.maxSpeed ? { label: t("maxSpeed"), value: boat.maxSpeed } : null,
+    { label: t("departure"), value: boat.departure },
+    { label: t("category"), value: t(`categories.${boat.category}`) },
+  ].filter((row): row is { label: string; value: string } => row !== null);
+
   return (
     <div className="bg-sand">
       <section className="relative overflow-hidden bg-marine text-white">
@@ -84,24 +95,25 @@ export default async function BoatDetailPage({ params }: Props) {
               <div className="rounded-3xl border border-sky/50 bg-white p-6 shadow-sm">
                 <h2 className="font-display text-xl font-semibold text-marine">{t("specs")}</h2>
                 <dl className="mt-4 space-y-3 text-sm">
-                  <div className="flex justify-between gap-4 border-b border-sky/30 pb-3">
-                    <dt className="text-foreground/60">{t("length")}</dt>
-                    <dd className="font-semibold text-marine">{boat.length}</dd>
-                  </div>
-                  <div className="flex justify-between gap-4 border-b border-sky/30 pb-3">
-                    <dt className="text-foreground/60">{t("capacity")}</dt>
-                    <dd className="font-semibold text-marine">{boat.passengers}</dd>
-                  </div>
-                  <div className="flex justify-between gap-4 border-b border-sky/30 pb-3">
-                    <dt className="text-foreground/60">{t("departure")}</dt>
-                    <dd className="text-right font-semibold text-marine">{boat.departure}</dd>
-                  </div>
-                  <div className="flex justify-between gap-4">
-                    <dt className="text-foreground/60">{t("category")}</dt>
-                    <dd className="font-semibold text-marine">
-                      {t(`categories.${boat.category}`)}
-                    </dd>
-                  </div>
+                  {vesselSpecRows.map((row, index) => (
+                    <div
+                      key={row.label}
+                      className={`flex justify-between gap-4 ${
+                        index < vesselSpecRows.length - 1
+                          ? "border-b border-sky/30 pb-3"
+                          : ""
+                      }`}
+                    >
+                      <dt className="text-foreground/60">{row.label}</dt>
+                      <dd
+                        className={`font-semibold text-marine ${
+                          row.label === t("departure") ? "text-right" : ""
+                        }`}
+                      >
+                        {row.value}
+                      </dd>
+                    </div>
+                  ))}
                 </dl>
               </div>
 

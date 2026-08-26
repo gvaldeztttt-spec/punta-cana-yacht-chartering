@@ -39,6 +39,7 @@ export function QuoteForm({ boat, locale }: QuoteFormProps) {
   const [guests, setGuests] = useState(Math.min(8, boat.passengers));
   const [destination, setDestination] = useState<Destination | "">("");
   const [message, setMessage] = useState("");
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -94,6 +95,7 @@ export function QuoteForm({ boat, locale }: QuoteFormProps) {
           guests,
           destination: destination || undefined,
           message: message || undefined,
+          website,
         }),
       });
 
@@ -101,6 +103,10 @@ export function QuoteForm({ boat, locale }: QuoteFormProps) {
 
       if (!response.ok) {
         throw new Error(data.error ?? t("error"));
+      }
+
+      if (data.preview) {
+        throw new Error(t("previewError"));
       }
 
       setStatus("success");
@@ -294,6 +300,17 @@ export function QuoteForm({ boat, locale }: QuoteFormProps) {
           <label htmlFor="quote-message" className="text-sm font-medium text-marine">
             {t("message")}
           </label>
+          <input
+            id="quote-website"
+            name="website"
+            type="text"
+            tabIndex={-1}
+            autoComplete="off"
+            value={website}
+            onChange={(event) => setWebsite(event.target.value)}
+            className="hidden"
+            aria-hidden="true"
+          />
           <textarea
             id="quote-message"
             rows={3}

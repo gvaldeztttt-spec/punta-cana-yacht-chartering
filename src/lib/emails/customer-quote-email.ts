@@ -1,7 +1,13 @@
 import { BoatCategory, getCharterInclusions } from "@/data/fleet";
 import { getCharterSchedule } from "@/lib/charter-schedule";
 import { emailBrand, emailFontsHref } from "@/lib/emails/brand";
-import { getPaymentLogoById, getPaymentLogoUrl, PAYMENT_LOGOS, PaymentLogoId } from "@/lib/payment-methods";
+import {
+  buildQuoteEmailAttachments,
+  cidSrc,
+  getEmailSiteUrl,
+  paymentLogoCid,
+} from "@/lib/emails/email-assets";
+import { getPaymentLogoById, PAYMENT_LOGOS, PaymentLogoId } from "@/lib/payment-methods";
 import { siteConfig } from "@/lib/site";
 import { QuoteRequest, QuoteSummary } from "@/lib/quote";
 
@@ -40,8 +46,11 @@ type EmailCopy = {
   tags: string[];
   experienceNote: string;
   model: string;
+  year: string;
   length: string;
   capacity: string;
+  engines: string;
+  maxSpeed: string;
   category: string;
   includesEyebrow: string;
   includesTitle: string;
@@ -68,10 +77,6 @@ type EmailCopy = {
 };
 
 const { colors: c, fonts: f, charterDeposit } = emailBrand;
-
-function getSiteUrl(): string {
-  return process.env.NEXT_PUBLIC_SITE_URL ?? `https://${siteConfig.domain}`;
-}
 
 function escapeHtml(value: string): string {
   return value
@@ -121,7 +126,7 @@ function getTourLabel(payload: EmailPayload): string {
 
 function getCopy(payload: EmailPayload): EmailCopy {
   const { request, summary } = payload;
-  const siteUrl = getSiteUrl();
+  const siteUrl = getEmailSiteUrl();
   const fleetUrl = `${siteUrl}/${request.locale}/fleet`;
   const shortDate = formatShortDate(summary.preferredDate, request.locale);
   const mailto = `mailto:${siteConfig.email}`;
@@ -156,8 +161,11 @@ function getCopy(payload: EmailPayload): EmailCopy {
       experienceNote:
         "La ruta y el horario se coordinan con el capitán según las condiciones del mar y tus preferencias.",
       model: "Modelo",
+      year: "Año",
       length: "Eslora",
       capacity: "Capacidad",
+      engines: "Motores",
+      maxSpeed: "Velocidad máx.",
       category: "Tipo",
       includesEyebrow: "Qué incluye",
       includesTitle: "Incluido en el charter",
@@ -238,8 +246,11 @@ function getCopy(payload: EmailPayload): EmailCopy {
     experienceNote:
       "Route and schedule are coordinated with the captain based on sea conditions and your preferences.",
     model: "Model",
+    year: "Year",
     length: "Length",
     capacity: "Capacity",
+    engines: "Engines",
+    maxSpeed: "Max speed",
     category: "Type",
     includesEyebrow: "What's included",
     includesTitle: "Included in your charter",
@@ -323,19 +334,18 @@ function specRow(label: string, value: string): string {
     </tr>`;
 }
 
-function renderEmailPaymentLogos(siteUrl: string, logoIds: PaymentLogoId[]): string {
+function renderEmailPaymentLogos(logoIds: PaymentLogoId[]): string {
   return logoIds
     .map((id) => {
       const logo = getPaymentLogoById(id);
-      const url = getPaymentLogoUrl(siteUrl, id);
-      return `<img src="${escapeHtml(url)}" alt="${escapeHtml(logo.name)}" height="28" style="display:inline-block;height:28px;width:auto;max-width:88px;object-fit:contain;margin:0 10px 8px 0;border:0;" />`;
+      return `<img src="${escapeHtml(cidSrc(paymentLogoCid(id)))}" alt="${escapeHtml(logo.name)}" height="28" style="display:inline-block;height:28px;width:auto;max-width:88px;object-fit:contain;margin:0 10px 8px 0;border:0;" />`;
     })
     .join("");
 }
 
-function renderPaymentMethodCard(siteUrl: string, method: PaymentMethod): string {
+function renderPaymentMethodCard(method: PaymentMethod): string {
   const logos = method.logoIds?.length
-    ? `<div style="margin-bottom:12px;line-height:0;">${renderEmailPaymentLogos(siteUrl, method.logoIds)}</div>`
+    ? `<div style="margin-bottom:12px;line-height:0;">${renderEmailPaymentLogos(method.logoIds)}</div>`
     : "";
 
   return `
@@ -352,11 +362,11 @@ function renderPaymentMethodCard(siteUrl: string, method: PaymentMethod): string
     </td>`;
 }
 
-function buildPaymentGrid(siteUrl: string, methods: PaymentMethod[]): string {
+function buildPaymentGrid(methods: PaymentMethod[]): string {
   return methods
     .reduce<string[][]>((rows, method, index) => {
       if (index % 2 === 0) rows.push([]);
-      rows[rows.length - 1].push(renderPaymentMethodCard(siteUrl, method));
+      rows[rows.length - 1].push(renderPaymentMethodCard(method));
       return rows;
     }, [])
     .map((cells) => {
@@ -367,10 +377,32 @@ function buildPaymentGrid(siteUrl: string, methods: PaymentMethod[]): string {
     .join("");
 }
 
+function buildExperienceSpecRows(payload: EmailPayload, copy: EmailCopy): string {
+  const { request, summary } = payload;
+  const boat = summary.boat;
+  const rows: Array<[string, string]> = [
+    [copy.model, boat.model ?? boat.name],
+    ...(boat.year ? [[copy.year, boat.year] as [string, string]] : []),
+    [copy.length, boat.length],
+    [
+      copy.capacity,
+      request.locale === "es"
+        ? `Máximo ${boat.passengers} personas`
+        : `Up to ${boat.passengers} guests`,
+    ],
+    ...(boat.engines ? [[copy.engines, boat.engines] as [string, string]] : []),
+    ...(boat.maxSpeed ? [[copy.maxSpeed, boat.maxSpeed] as [string, string]] : []),
+    [copy.category, categoryLabel(boat.category, request.locale)],
+    [copy.departure, boat.departure],
+  ];
+
+  return rows.map(([label, value]) => specRow(label, value)).join("");
+}
+
 function buildPlainText(payload: EmailPayload, copy: EmailCopy): string {
   const { request, summary } = payload;
   const inclusions = getCharterInclusions(request.locale);
-  const fleetUrl = `${getSiteUrl()}/${request.locale}/fleet`;
+  const fleetUrl = `${getEmailSiteUrl()}/${request.locale}/fleet`;
 
   return [
     `${copy.greetingPrefix} ${request.name.toUpperCase()}`,
@@ -421,16 +453,12 @@ function buildPlainText(payload: EmailPayload, copy: EmailCopy): string {
 function buildHtml(payload: EmailPayload, copy: EmailCopy): string {
   const { request, summary } = payload;
   const inclusions = getCharterInclusions(request.locale);
-  const siteUrl = getSiteUrl();
-  const boatImageUrl = `${siteUrl}/boats/${summary.boat.slug}/01.jpg`;
+  const siteUrl = getEmailSiteUrl();
   const fleetUrl = `${siteUrl}/${request.locale}/fleet`;
   const mailto = `mailto:${siteConfig.email}`;
   const displayName = escapeHtml(request.name.toUpperCase());
-  const paymentGrid = buildPaymentGrid(siteUrl, copy.paymentMethods);
-  const paymentLogoStrip = renderEmailPaymentLogos(
-    siteUrl,
-    PAYMENT_LOGOS.map((logo) => logo.id),
-  );
+  const paymentGrid = buildPaymentGrid(copy.paymentMethods);
+  const paymentLogoStrip = renderEmailPaymentLogos(PAYMENT_LOGOS.map((logo) => logo.id));
 
   const inclusionRows = inclusions
     .map(
@@ -498,35 +526,19 @@ function buildHtml(payload: EmailPayload, copy: EmailCopy): string {
           <table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:680px;">
 
             <!-- Header -->
-            <tr>
-              <td style="background:${c.marine};border-radius:20px 20px 0 0;padding:24px 28px;">
-                <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
                   <tr>
-                    <td>
-                      <table role="presentation" cellspacing="0" cellpadding="0">
-                        <tr>
-                          <td style="width:44px;height:44px;border-radius:999px;background:${c.white};text-align:center;font-family:${f.body};font-size:14px;font-weight:700;color:${c.marine};">
-                            PC
-                          </td>
-                          <td style="padding-left:12px;">
-                            <p style="margin:0;font-family:${f.display};font-size:22px;font-weight:700;color:${c.white};line-height:1.2;">
-                              ${escapeHtml(siteConfig.name)}
-                            </p>
-                          </td>
-                        </tr>
-                      </table>
+                    <td style="background:${c.marine};border-radius:20px 20px 0 0;padding:24px 28px;">
+                      <img
+                        src="${escapeHtml(cidSrc("brand-logo"))}"
+                        alt="${escapeHtml(siteConfig.name)}"
+                        height="52"
+                        style="display:block;height:52px;width:auto;border:0;"
+                      />
+                      <p style="margin:10px 0 0;font-family:${f.body};font-size:13px;color:${c.sky};">
+                        ${escapeHtml(copy.footerTagline)}
+                      </p>
                     </td>
                   </tr>
-                  <tr>
-                    <td style="padding-top:18px;">
-                      <a href="${fleetUrl}" style="font-family:${f.body};font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:${c.sky};text-decoration:none;margin-right:18px;">${escapeHtml(copy.navFleet)}</a>
-                      <a href="${getSiteUrl()}/${request.locale}#destinations" style="font-family:${f.body};font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:${c.sky};text-decoration:none;margin-right:18px;">${escapeHtml(copy.navDestinations)}</a>
-                      <a href="${getSiteUrl()}/${request.locale}#contact" style="font-family:${f.body};font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:${c.sky};text-decoration:none;">${escapeHtml(copy.navContact)}</a>
-                    </td>
-                  </tr>
-                </table>
-              </td>
-            </tr>
 
             <!-- Body -->
             <tr>
@@ -545,7 +557,7 @@ function buildHtml(payload: EmailPayload, copy: EmailCopy): string {
                     </td>
                     <td width="240" style="vertical-align:top;" class="stack-column">
                       <img
-                        src="${escapeHtml(boatImageUrl)}"
+                        src="${escapeHtml(cidSrc("boat-image"))}"
                         alt="${escapeHtml(summary.boat.name)}"
                         width="240"
                         style="display:block;width:100%;max-width:240px;height:auto;border-radius:18px;border:3px solid ${c.border};"
@@ -583,11 +595,7 @@ function buildHtml(payload: EmailPayload, copy: EmailCopy): string {
                               ${escapeHtml(copy.experienceTitle)}
                             </p>
                             <table role="presentation" width="100%" cellspacing="0" cellpadding="0">
-                              ${specRow(copy.model, summary.boat.name)}
-                              ${specRow(copy.length, summary.boat.length)}
-                              ${specRow(copy.capacity, request.locale === "es" ? `Máximo ${summary.boat.passengers} personas` : `Up to ${summary.boat.passengers} guests`)}
-                              ${specRow(copy.category, categoryLabel(summary.boat.category, request.locale))}
-                              ${specRow(copy.departure, summary.boat.departure)}
+                              ${buildExperienceSpecRows(payload, copy)}
                             </table>
                             <p style="margin:16px 0 0;font-family:${f.body};font-size:12px;line-height:1.6;color:${c.muted};">
                               ${escapeHtml(copy.experienceNote)}
@@ -725,10 +733,12 @@ function buildHtml(payload: EmailPayload, copy: EmailCopy): string {
 
 export function buildCustomerQuoteEmail(payload: EmailPayload) {
   const copy = getCopy(payload);
+  const attachments = buildQuoteEmailAttachments(payload.summary.boat.slug);
 
   return {
     subject: copy.subject,
     text: buildPlainText(payload, copy),
     html: buildHtml(payload, copy),
+    attachments,
   };
 }

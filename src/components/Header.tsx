@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
+import { Logo } from "@/components/Logo";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -23,19 +24,7 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-sky/40 bg-white/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="group flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-full bg-marine text-sm font-bold text-white shadow-sm">
-            PC
-          </div>
-          <div className="leading-tight">
-            <div className="font-display text-lg font-semibold text-marine transition group-hover:text-ocean">
-              Punta Cana
-            </div>
-            <div className="text-xs font-medium uppercase tracking-[0.18em] text-ocean">
-              Yacht Charting
-            </div>
-          </div>
-        </Link>
+        <Logo />
 
         <nav className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (

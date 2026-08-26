@@ -114,6 +114,10 @@
     "capacity": "Capacidad",
     "departure": "Salida",
     "category": "Categoría",
+    "model": "Modelo",
+    "year": "Año",
+    "engines": "Motores",
+    "maxSpeed": "Velocidad máx.",
     "pricing": "Precios",
     "halfDay": "Medio Día",
     "fullDay": "Día Completo",
@@ -223,6 +227,7 @@
     "sending": "Enviando cotización...",
     "successTitle": "¡Cotización enviada!",
     "successMessage": "Revisa tu bandeja de entrada para ver tu cotización instantánea. Nuestro equipo confirmará disponibilidad por correo.",
+    "previewError": "El correo aún no está configurado. Agrega la configuración SMTP en .env.local y reinicia el servidor de desarrollo.",
     "error": "No se pudo enviar tu cotización. Inténtalo de nuevo."
   }
 }

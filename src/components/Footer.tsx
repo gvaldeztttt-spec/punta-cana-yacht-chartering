@@ -2,6 +2,7 @@
 
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
+import { Logo } from "@/components/Logo";
 import { siteConfig } from "@/lib/site";
 
 export function Footer() {
@@ -12,8 +13,8 @@ export function Footer() {
     <footer className="border-t border-sky/40 bg-marine text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
         <div>
-          <div className="font-display text-2xl font-semibold">Punta Cana Yacht Charting</div>
-          <p className="mt-3 max-w-sm text-sm text-sky-light/90">{t("tagline")}</p>
+          <Logo variant="footer" />
+          <p className="mt-4 max-w-sm text-sm text-sky-light/90">{t("tagline")}</p>
         </div>
 
         <div>

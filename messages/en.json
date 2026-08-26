@@ -114,6 +114,10 @@
     "capacity": "Capacity",
     "departure": "Departure",
     "category": "Category",
+    "model": "Model",
+    "year": "Year",
+    "engines": "Engines",
+    "maxSpeed": "Max speed",
     "pricing": "Pricing",
     "halfDay": "Half Day",
     "fullDay": "Full Day",
@@ -223,6 +227,7 @@
     "sending": "Sending quote...",
     "successTitle": "Quote sent!",
     "successMessage": "Check your inbox for your instant quote. Our team will follow up by email to confirm availability.",
+    "previewError": "Email is not configured yet. Add SMTP settings to .env.local and restart the dev server.",
     "error": "Unable to send your quote. Please try again."
   }
 }

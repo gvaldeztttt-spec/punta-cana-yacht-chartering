@@ -13,6 +13,10 @@ export type Boat = {
   departure: string;
   featured: boolean;
   destinations: Destination[];
+  model?: string;
+  year?: string;
+  engines?: string;
+  maxSpeed?: string;
 };
 
 export const CHARTER_INCLUSIONS = [
@@ -44,6 +48,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: false,
     destinations: DESTINATIONS,
+    model: "Fairline 43",
+    year: "2009 (Remodeled 2023)",
+    engines: "2×370–435 hp",
+    maxSpeed: "~32–34 knots",
   },
   {
     slug: "fairline-43-white",
@@ -56,6 +64,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: false,
     destinations: DESTINATIONS,
+    model: "Fairline 43",
+    year: "2009 (Remodeled 2023)",
+    engines: "2×370–435 hp",
+    maxSpeed: "~32–34 knots",
   },
   {
     slug: "cruiser-40",
@@ -80,6 +92,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: true,
     destinations: DESTINATIONS,
+    model: "Princess 42",
+    year: "2020",
+    engines: "2×435 hp Volvo Penta",
+    maxSpeed: "~30–32 knots",
   },
   {
     slug: "azimut-55",
@@ -92,6 +108,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: true,
     destinations: DESTINATIONS,
+    model: "Azimut 55",
+    year: "2010 (Remodeled 2023)",
+    engines: "2×700 hp",
+    maxSpeed: "30 knots",
   },
   {
     slug: "aicon-60",
@@ -104,6 +124,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: true,
     destinations: DESTINATIONS,
+    model: "Aicon Fly 60",
+    year: "2008 (Remodeled 2024)",
+    engines: "2×800 hp",
+    maxSpeed: "30 knots",
   },
   {
     slug: "princess-60",
@@ -116,6 +140,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: true,
     destinations: DESTINATIONS,
+    model: "Princess 60",
+    year: "2007",
+    engines: "2×800–900 hp",
+    maxSpeed: "~33–35 knots",
   },
   {
     slug: "pacific-mariner-72",
@@ -140,6 +168,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: false,
     destinations: DESTINATIONS,
+    model: "Sea Ray 53 Sedan Bridge",
+    year: "2015",
+    engines: "2× Cummins QSM11 715 hp",
+    maxSpeed: "~30–32 knots",
   },
   {
     slug: "sea-ray-54",
@@ -152,6 +184,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: true,
     destinations: DESTINATIONS,
+    model: "Sea Ray 540 Sundancer",
+    year: "1991 (Fully Remodeled 2023)",
+    engines: "2×550 hp Diesel",
+    maxSpeed: "~28–30 knots",
   },
   {
     slug: "atomic-power-46",
@@ -164,6 +200,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: true,
     destinations: DESTINATIONS,
+    model: "Atomic Power 46 Catamaran",
+    year: "2024",
+    engines: "2×275 hp Mercury Outboards",
+    maxSpeed: "~22–25 knots",
   },
   {
     slug: "atomic-slide-46",
@@ -188,6 +228,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: true,
     destinations: DESTINATIONS,
+    model: "Lagoon 440 Power",
+    year: "2012 (Refit 2020)",
+    engines: "2×100 hp",
+    maxSpeed: "24 knots",
   },
   {
     slug: "fountain-pajot-50",
@@ -200,6 +244,10 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: false,
     destinations: DESTINATIONS,
+    model: "Fountaine Pajot Saba 50",
+    year: "2012 (Fully Remodeled 2025)",
+    engines: "2×55–75 hp Diesel",
+    maxSpeed: "~9–10 knots under power",
   },
   {
     slug: "custom-privilege-65",
@@ -212,6 +260,9 @@ export const fleet: Boat[] = [
     departure: DEPARTURE,
     featured: true,
     destinations: DESTINATIONS,
+    model: "Custom Privilege 65",
+    year: "2013",
+    engines: "4× Outboards",
   },
   {
     slug: "atomic-elite-46",
